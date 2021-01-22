@@ -4,8 +4,8 @@ import datetime
 from io import StringIO
 from io import BytesIO
 
-project_id='steven-datapipeline'
-destination_bucket='result_excel_files'
+project_id=['YOUR-PROJECT-ID']
+destination_bucket=['YOUR-DESTINATION-BUCKET']
 
 
 def chunk_csv_file(event,destination_bucket):
