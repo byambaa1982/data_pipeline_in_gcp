@@ -15,11 +15,12 @@ Build reliable serverless and cost effective data pipelines in GCP using python.
 Thankfully, Google Cloud (GCP) offers some awesome serverless tools where you can run a workflow like this for next to no cost.
 
 In this repo, we will look to do the following:
--Set up Cloud Function and Cloud Storage
--Extract data
--Transform data
--Load data
--Automate our pipeline
+
+- Set up Cloud Function and Cloud Storage
+- Extract data
+- Transform data
+- Load data
+- Automate our pipeline
 
 
 ## The Workflow
