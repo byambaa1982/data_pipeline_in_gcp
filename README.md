@@ -1,7 +1,8 @@
 
 # How to do ETL using Google Cloud Function?
 
-- stable release version: ![version](https://img.shields.io/github/languages/code-size/byambaa1982/data_pipeline_in_gcp)
+![version](https://img.shields.io/github/languages/code-size/byambaa1982/data_pipeline_in_gcp)
+(https://img.shields.io/github/followers/byambaa1982?style=social)
 
 All code is in [my github](https://github.com/byambaa1982/data_pipeline_in_gcp/blob/main/main.py)
 
