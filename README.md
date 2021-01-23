@@ -1,12 +1,7 @@
----
-title: "How to do ETL using Google Cloud Function?"
-date: 2021-01-22 11:33:00 +0800
-categories: [Google Cloud Function, Python]
-tags: [pandas, lambda, cloud engineering]
----
-[![Python Version][python-image]](https://img.shields.io/github/languages/code-size/byambaa1982/data_pipeline_in_gcp)
 
 # How to do ETL using Google Cloud Function?
+
+- stable release version: ![version](https://img.shields.io/github/languages/code-size/byambaa1982/data_pipeline_in_gcp)
 
 All code is in [my github](https://github.com/byambaa1982/data_pipeline_in_gcp/blob/main/main.py)
 
