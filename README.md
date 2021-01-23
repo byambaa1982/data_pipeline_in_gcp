@@ -21,15 +21,15 @@ Thankfully, Google Cloud (GCP) offers some awesome serverless tools where you ca
 
 1. Create three buckets in Cloud Storage
 
-Setting up a Cloud Storage bucket is pretty straightforward, so straightforward that I’ll just give you a link to [the official GCP documentation](https://cloud.google.com/storage/docs/creating-buckets) that gives an example.
-The first storage is a temporary storage that for uploading a compressed file and triggering the first cloud function.
-The second one is a staging storage that for triggering the second cloud function. 
+- Setting up a Cloud Storage bucket is pretty straightforward, so straightforward that I’ll just give you a link to [the official GCP documentation](https://cloud.google.com/storage/docs/creating-buckets) that gives an example.
+- The first storage is a temporary storage that for uploading a compressed file and triggering the first cloud function.
+- The second one is a staging storage that for triggering the second cloud function. 
 The third one is the final storage where we can download result excel files files. 
 
 2. Create 2 Cloud Function. 
 
-The first cloud function do extact a compressed file, sent it to the second storage and delete one in the first storage. That way, we can avoid incurring unnessery storage fee. 
-The second cloud function do ETL. It will chunk large csv file into small Excel files and store them in the final storage. 
+- The first cloud function do extact a compressed file, sent it to the second storage and delete one in the first storage. That way, we can avoid incurring unnessery storage fee. 
+- The second cloud function do ETL. It will chunk large csv file into small Excel files and store them in the final storage. 
 
 If you have anything to ask, please contact me clicking following link?
 
