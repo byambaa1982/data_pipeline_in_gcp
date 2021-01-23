@@ -3,6 +3,7 @@
 
 ![repo size](https://img.shields.io/github/repo-size/byambaa1982/data_pipeline_in_gcp)
 ![size](https://img.shields.io/github/languages/code-size/byambaa1982/data_pipeline_in_gcp)
+![language count](https://img.shields.io/github/languages/count/byambaa1982/data_pipeline_in_gcp)
 ![social](https://img.shields.io/github/followers/byambaa1982?style=social)
 ![stats](https://img.shields.io/github/stars/byambaa1982/data_pipeline_in_gcp?style=social)
 
