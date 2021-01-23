@@ -4,6 +4,7 @@ date: 2021-01-22 11:33:00 +0800
 categories: [Google Cloud Function, Python]
 tags: [pandas, lambda, cloud engineering]
 ---
+[![Python Version][python-image]][python-url]
 
 # How to do ETL using Google Cloud Function?
 
