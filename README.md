@@ -39,7 +39,7 @@ The third one is the final storage where we can download result excel files file
 - The first cloud function do extact a compressed file, sent it to the second storage and delete one in the first storage. That way, we can avoid incurring unnessery storage fee. 
 - The second cloud function do ETL. It will chunk large csv file into small Excel files and store them in the final storage. 
 
-[![Alt text for your video](https://storage.googleapis.com/my-bigquery-lab-286400_cloudbuild/images/data%20mining%202.png )](https://www.youtube.com/watch?v=hIndB7N0bsU&list=PL_PVh8V5AOfgPU19auWYCX_StWXF2fABX "Put hover text here!")
+[![Alt text for your video](https://storage.googleapis.com/my-bigquery-lab-286400_cloudbuild/images/watch_video.png)](https://www.youtube.com/watch?v=hIndB7N0bsU&list=PL_PVh8V5AOfgPU19auWYCX_StWXF2fABX "Put hover text here!")
 
 If you have anything to ask, please contact me clicking following link?
 
