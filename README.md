@@ -41,8 +41,6 @@ The third one is the final storage where we can download result excel files file
 
 If you have anything to ask, please contact me clicking following link?
 
-[![Alt text for your video](https://storage.googleapis.com/my-bigquery-lab-286400_cloudbuild/images/data%20mining%202.png )](https://storage.googleapis.com/my-bigquery-lab-286400_cloudbuild/video/datapipeline.mov "Put hover text here!")
-
 
 You can hire me [here](https://www.fiverr.com/coderjs)
 
