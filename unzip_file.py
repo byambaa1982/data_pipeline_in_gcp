@@ -1,9 +1,4 @@
 from google.cloud import storage
-from zipfile import ZipFile
-from zipfile import is_zipfile
-import io
-
-from google.cloud import storage
 import zipfile
 from io import StringIO
 from io import BytesIO
@@ -11,7 +6,7 @@ from zipfile import ZipFile
 from zipfile import is_zipfile
 import os  
 
-new_bucket = 'car_datalake'
+new_bucket = 'your-new-bucket'
 # bucket_name=event['bucket']
 # blob_name=event['name']
 client = storage.Client()
@@ -36,19 +31,15 @@ def move_delete_blob(event, context):
                 contentfile = myzip.read(contentfilename)
                 bucket= client.get_bucket(new_bucket)
                 newblob=bucket.blob(contentfilename)
-                path=newblob  
-                if os.path.isdir(path): 
-                    app_input=os.chdir(path)
+                if os.path.isdir(contentfile):
+                    app_input=os.chdir(contentfile)
                     filenames = [files  for files in os.listdir(app_input) if files.find(".csv") != -1 ]
                     for filename in filenames:
                         newblob.upload_from_string(filename)
-                    print("It is a directory")  
-                elif os.path.isfile(path): 
-                    newblob.upload_from_string(filename) 
-                    print("\nIt is a normal file")  
-                else:  
-                    print("It is a special file (socket, FIFO, device file)" )
+                        print(filename)
+                else:
                     newblob.upload_from_string(contentfile)
+                    print(contentfile)
     # Delete old file
     blob.delete()
     print("Blob {} deleted.".format(blob))
