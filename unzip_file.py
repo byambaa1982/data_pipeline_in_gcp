@@ -9,7 +9,7 @@ from io import StringIO
 from io import BytesIO
 from zipfile import ZipFile
 from zipfile import is_zipfile
-
+import os  
 
 new_bucket = 'car_datalake'
 # bucket_name=event['bucket']
@@ -36,7 +36,19 @@ def move_delete_blob(event, context):
                 contentfile = myzip.read(contentfilename)
                 bucket= client.get_bucket(new_bucket)
                 newblob=bucket.blob(contentfilename)
-                newblob.upload_from_string(contentfile)
+                path=newblob  
+                if os.path.isdir(path): 
+                    app_input=os.chdir(path)
+                    filenames = [files  for files in os.listdir(app_input) if files.find(".csv") != -1 ]
+                    for filename in filenames:
+                        newblob.upload_from_string(filename)
+                    print("It is a directory")  
+                elif os.path.isfile(path): 
+                    newblob.upload_from_string(filename) 
+                    print("\nIt is a normal file")  
+                else:  
+                    print("It is a special file (socket, FIFO, device file)" )
+                    newblob.upload_from_string(contentfile)
     # Delete old file
     blob.delete()
     print("Blob {} deleted.".format(blob))
