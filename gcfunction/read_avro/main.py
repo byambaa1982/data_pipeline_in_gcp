@@ -9,9 +9,9 @@ import avro.schema
 from avro.datafile import DataFileReader, DataFileWriter
 from avro.io import DatumReader, DatumWriter
 
-os.environ["GCLOUD_PROJECT"] = "twittersheet-275317"
-project_id='twittersheet-275317'
-destination_bucket='getting-termites-tweet'
+os.environ["GCLOUD_PROJECT"] = "orange142-all-data"
+project_id='orange142-all-data'
+destination_bucket='xandr_log_level_data/feeds/standard_feed'
 
 
 def check_and_trans(event,destination_bucket):
@@ -19,23 +19,22 @@ def check_and_trans(event,destination_bucket):
   #please change the file's URI
   fname=event['name']
   print('Uploaded file: {}'.format(event['name']))
-  myurl='gs://staging.twittersheet-275317.appspot.com/'+str(fname)
-  bucket=client.get_bucket('getting-termites-tweet')
+  myurl='gs://xandr_log_level_data/feeds/standard_feed/'+str(fname)
+  bucket=client.get_bucket('xandr_log_level_data/feeds/standard_feed')
   files=[]
   for blob in bucket.list_blobs():
     if '.avro' in blob.name:
-      print(blob.name)
       filename=blob.name
       files.append(filename)
 
   print(files[-1])
   my_file=str(files[-1])
   blob=bucket.blob(my_file)
-  blob.download_to_filename("temp.avro")
-  reader = DataFileReader(open("temp.avro", "rb"), DatumReader())
+  blob.download_to_filename("/tmp/temp.avro")
+  reader = DataFileReader(open("/tmp/temp.avro", "rb"), DatumReader())
   records = [r for r in reader]
   # Populate pandas.DataFrame with records
-  df = pandas.DataFrame.from_records(records)
+  df = pd.DataFrame.from_records(records)
   print('url is {}'.format(myurl))
   print('chunk shape is {}'.format(df.shape))
   date_until=datetime.today().strftime('%Y-%m-%d')
@@ -49,7 +48,7 @@ def check_and_trans(event,destination_bucket):
   df2.to_csv(f, index=False)
   f.seek(0)
   client=storage.Client()
-  bucket=client.get_bucket('getting-termites-tweet')
+  bucket=client.get_bucket('output_csv_for_bigquery')
   newblob=bucket.blob(filename)
   newblob.upload_from_string(f.read(), content_type='text/csv')
   print('uploaded storage')
